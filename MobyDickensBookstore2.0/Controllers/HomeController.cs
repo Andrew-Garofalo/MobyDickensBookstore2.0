@@ -8,11 +8,13 @@ namespace MobyDickensBookstore2._0.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
+        [HttpGet]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -20,11 +22,21 @@ namespace MobyDickensBookstore2._0.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Tell us what you think:";
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Contact(string message)
+        {
+            ViewBag.Message = "Thanks for the feedback!";
+
+            return PartialView("_ThanksForFeedback");
+        }
+
     }
 }

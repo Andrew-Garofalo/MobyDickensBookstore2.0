@@ -29,5 +29,7 @@ namespace MobyDickensBookstore2._0.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<MobyDickensBookstore2._0.Models.Book> Books { get; set; }
     }
 }
