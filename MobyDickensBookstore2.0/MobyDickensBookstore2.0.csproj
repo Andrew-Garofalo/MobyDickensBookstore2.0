@@ -171,9 +171,20 @@
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MyAuthorize.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ApplicationDbContext\201904131739285_InitialCreate.cs" />
+    <Compile Include="Migrations\ApplicationDbContext\201904131739285_InitialCreate.Designer.cs">
+      <DependentUpon>201904131739285_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ApplicationDbContext\Configuration.cs" />
+    <Compile Include="Migrations\MobyDickensBookstore2_0Context\201904131733440_InitialCreate.cs" />
+    <Compile Include="Migrations\MobyDickensBookstore2_0Context\201904131733440_InitialCreate.Designer.cs">
+      <DependentUpon>201904131733440_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MobyDickensBookstore2_0Context\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -264,6 +275,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\ApplicationDbContext\201904131739285_InitialCreate.resx">
+      <DependentUpon>201904131739285_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\MobyDickensBookstore2_0Context\201904131733440_InitialCreate.resx">
+      <DependentUpon>201904131733440_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

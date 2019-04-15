@@ -6,6 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using MobyDickensBookstore2._0.Models;
 
 namespace MobyDickensBookstore2._0.Controllers
@@ -36,6 +38,7 @@ namespace MobyDickensBookstore2._0.Controllers
         }
 
         // GET: Books/Create
+        //[Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -46,6 +49,7 @@ namespace MobyDickensBookstore2._0.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        //[Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "Id,ISBN,Title,Author,Date,Genre,Price")] Book book)
         {
             if (ModelState.IsValid)
@@ -59,6 +63,7 @@ namespace MobyDickensBookstore2._0.Controllers
         }
 
         // GET: Books/Edit/5
+        //[Authorize(Roles = "Admin")]
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -78,6 +83,7 @@ namespace MobyDickensBookstore2._0.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        //[Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "Id,ISBN,Title,Author,Date,Genre,Price")] Book book)
         {
             if (ModelState.IsValid)
@@ -90,6 +96,7 @@ namespace MobyDickensBookstore2._0.Controllers
         }
 
         // GET: Books/Delete/5
+        //[Authorize(Roles = "Admin")]
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -105,6 +112,7 @@ namespace MobyDickensBookstore2._0.Controllers
         }
 
         // POST: Books/Delete/5
+        //[Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
